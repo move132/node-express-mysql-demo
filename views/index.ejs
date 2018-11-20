@@ -57,11 +57,12 @@
                         <th style="width:100px;">错误类型</th>
                         <th>错误地址</th>
                         <th style="">错误信息</th>
+                        <th style="">错误堆栈</th>
                         <th style="width:150px;">错误时间</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <% data.forEach(function(item,index){ %>
+                    <% console.log(data); data.forEach(function(item,index){ %>
                     <tr class="<%=index % 2==0?'info':'primary' %>">
                         <td  style="width:50px;">
                             <input type="checkbox" value=<%=item.id %>>
@@ -77,6 +78,9 @@
                         </td>
                         <td >
                             <div class="text" data-toggle="tooltip" data-placement="top" title="<%=item.msg %>"><%=item.msg %></div>
+                        </td>
+                        <td  style="width:100px;">
+                            <%=item.statck %>
                         </td>
                         <td style="width:150px;">
                             <%=item.time %>
